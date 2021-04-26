@@ -1,0 +1,18 @@
+Source: robin-hood-hashing
+Section: unknown
+Priority: optional
+Maintainer: John Zupin <johnz@lunarg.com>
+Build-Depends: debhelper (>= 10)
+Standards-Version: 4.1.2
+Homepage: https://github.com/martinus/robin-hood-hashing
+Vcs-Git: https://github.com/martinus/robin-hood-hashing
+Vcs-Browser: https://github.com/martinus/robin-hood-hashing
+
+Package: robin-hood-hashing-dev
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: a platform independent replacement for unordered_map/unordered_set
+ robin_hood::unordered_map and robin_hood::unordered_set
+ is a platform independent replacement for std::unordered_map
+ std::unordered_set which is both faster and more memory
+ efficient for real-world use cases.
