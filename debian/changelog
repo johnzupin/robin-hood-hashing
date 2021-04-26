@@ -1,0 +1,5 @@
+robin-hood-hashing (3.11.1-1-gf7aa87e~rc1-1lunarg18.04-1) unstable; urgency=medium
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- John Zupin <johnz@lunarg.com>  Mon, 26 Apr 2021 16:43:56 -0600
