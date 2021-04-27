@@ -1,3 +1,9 @@
+robin-hood-hashing (3.11.1-2-gf7aa87e~rc1-1lunarg18.04-1) bionic; urgency=medium
+
+  * UNRELEASED
+
+ -- John Zupin <john@odin>  Tue, 27 Apr 2021 13:52:57 -0600
+
 robin-hood-hashing (3.11.1-1-gf7aa87e~rc1-1lunarg18.04-1) unstable; urgency=medium
 
   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
