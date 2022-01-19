@@ -2,7 +2,8 @@ Source: robin-hood-hashing
 Section: unknown
 Priority: optional
 Maintainer: John Zupin <johnz@lunarg.com>
-Build-Depends: debhelper (>= 10)
+Build-Depends: debhelper (>= 10),
+ cmake
 Standards-Version: 4.1.2
 Homepage: https://github.com/martinus/robin-hood-hashing
 Vcs-Git: https://github.com/martinus/robin-hood-hashing
