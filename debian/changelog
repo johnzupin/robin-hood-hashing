@@ -1,3 +1,20 @@
+robin-hood-hashing (3.11.3-24b3f50~rc1-1lunarg20.04-1) focal; urgency=medium
+
+  [ Martin Ankerl ]
+  * ignore clangd
+  * fix #125: add missing include
+  * experiment with rust-throttler
+  * fix build
+  * Don't change hash multiplier when hash works well, this introduces the danger of getting an overflow
+  * fix windows build
+  * don't trace in overflow2
+  * Bump version to 3.11.3
+
+  [ John Zupin ]
+  * packaging: update how RH is packaged
+
+ -- John Zupin <john@odin>  Thu, 03 Feb 2022 15:42:41 -0700
+
 robin-hood-hashing (3.11.1-2-gf7aa87e~rc1-1lunarg20.04-1) focal; urgency=medium
 
   * UNRELEASED
