@@ -1,3 +1,20 @@
+robin-hood-hashing (3.11.5~rc1-1lunarg18.04-1) bionic; urgency=medium
+
+  [ Martin Leitner-Ankerl ]
+  * Create codeql-analysis.yml
+  * Adds missing methods with the const_iterator hint.
+
+  [ acd1034 ]
+  * The return type of functions that use hints should be consistent with std (#138)
+
+  [ zhanglistar ]
+  * Use malloc + memset instead of calloc
+
+  [ Martin Leitner-Ankerl ]
+  * bump version to 3.11.5
+
+ -- john <john@odin>  Thu, 09 Jun 2022 08:15:34 -0600
+
 robin-hood-hashing (3.11.3-24b3f50~rc1-1lunarg18.04-1) bionic; urgency=medium
 
   [ Martin Ankerl ]
