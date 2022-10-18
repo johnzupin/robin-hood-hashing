@@ -1,3 +1,9 @@
+robin-hood-hashing (3.11.5~rc1-1lunarg22.04-1) jammy; urgency=medium
+
+  * UNRELEASED
+
+ -- john <john@odin>  Tue, 18 Oct 2022 11:39:04 -0600
+
 robin-hood-hashing (3.11.5~rc1-1lunarg20.04-1) focal; urgency=medium
 
   [ Martin Leitner-Ankerl ]
