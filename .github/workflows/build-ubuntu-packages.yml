@@ -1,0 +1,51 @@
+name: build-ubuntu-packages
+run-name: Build Debian style packages for Ubuntu distros
+on:
+  push:
+  workflow_call:
+    inputs:
+      rhh:
+        required: true
+        type: string
+        default: '{"repo":"johnzupin/robin-hood-hashing","ref":"ubuntu/focal"}'
+        description: "A json string that defines repo and ref. Ex) {repo:martinux/robin-hood-hashing, ref:ubuntu/focal}"
+  workflow_dispatch:
+    inputs:
+      rhh:
+        required: true
+        type: string
+        default: '{"repo":"johnzupin/robin-hood-hashing","ref":"ubuntu/focal"}'
+        description: "A json string that defines repo and ref. Ex) {repo:martinux/robin-hood-hashing, ref:ubuntu/focal}"
+
+jobs:
+  build-robin-hood-hashing-focal-package:
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:20.04
+    steps:
+      - run: |
+          apt-get update && \
+          DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install -y \
+          git-buildpackage cmake debhelper
+      - name: "No input specified - Building the Repository"
+        if: ${{ inputs.rhh == '' }}
+        run: |
+          echo "RHH_REPO=$GITHUB_REPOSITORY" >> "$GITHUB_ENV"
+          echo "RHH_REF=$GITHUB_REF_NAME" >> "$GITHUB_ENV"
+      - name: "Inputs have been specified - Building with inputs"
+        if: ${{ inputs.rhh != '' }}
+        run: |
+          echo "RHH_REPO=${{ fromJSON(inputs.rhh).repo }}" >> "$GITHUB_ENV"
+          echo "RHH_REF=${{ fromJSON(inputs.rhh).ref }}" >> "$GITHUB_ENV"
+      - uses: actions/checkout@v3
+        with:
+          repository: "${{ env.RHH_REPO }}"
+          ref: "${{ env.RHH_REF }}"
+      - run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+      - run: git config --global user.email 'lunarg@lunarg.com'
+      - run: git config --global user.name 'LunarG'
+      - run: gbp buildpackage --git-verbose --git-force-create --git-upstream-tree="branch" --git-ignore-branch --git-upstream-branch="${{ env.RHH_REF }}" --no-sign
+      - uses: actions/upload-artifact@v3
+        with:
+          name: "robin-hood-hashing-focal-package"
+          path: "${{ runner.workspace }}/robin-hood-hashing-*20.04*amd64.deb"
