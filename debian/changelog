@@ -1,3 +1,9 @@
+robin-hood-hashing (3.11.5~rc1-1lunarg24.04-1) noble; urgency=medium
+
+  * UNRELEASED
+
+ -- john <john@odin>  Tue, 16 Jul 2024 11:48:36 -0600
+
 robin-hood-hashing (3.11.5~rc1-1lunarg22.04-1) jammy; urgency=medium
 
   * UNRELEASED
